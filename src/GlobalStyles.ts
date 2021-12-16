@@ -17,6 +17,12 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Nunito Sans', sans-serif;
         font-weight: 600;
     }
+
+    button {
+        border: none;
+        outline: none;
+        font: inherit;
+    }
 `;
 
 export default GlobalStyle;
