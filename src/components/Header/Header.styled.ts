@@ -4,7 +4,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   padding: 2rem 1rem;
   background-color: ${(props) => props.theme.colors.lightMode.elements};
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: ${(props) => props.theme.boxShadow};
   //makign box-shadow visible above main
   position: relative;
   z-index: 1;

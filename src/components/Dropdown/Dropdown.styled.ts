@@ -13,7 +13,7 @@ export const Selected = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: ${(props) => props.theme.boxShadow};
   cursor: pointer;
 `;
 
@@ -26,7 +26,7 @@ export const OptionsList = styled.ul`
   transform: translateY(105%);
   list-style-type: none;
   background-color: ${(props) => props.theme.colors.lightMode.elements};
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: ${(props) => props.theme.boxShadow};
 `;
 
 export const ListElement = styled.li`

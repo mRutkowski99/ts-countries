@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         font: inherit;
     }
+    
 `;
 
 export default GlobalStyle;

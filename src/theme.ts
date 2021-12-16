@@ -17,6 +17,7 @@ interface ITheme {
     darkMode: IMode;
   };
   fontWeights: IFontWeights;
+  boxShadow: string;
 }
 
 const theme: ITheme = {
@@ -39,6 +40,7 @@ const theme: ITheme = {
     bold: 600,
     xbold: 800,
   },
+  boxShadow: "0 5px 10px rgba(0, 0, 0, 0.1)",
 };
 
 export default theme;
