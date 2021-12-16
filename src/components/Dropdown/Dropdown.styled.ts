@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDropdown = styled.div`
-  width: 25rem;
+  width: 20rem;
   position: relative;
   color: ${(props) => props.theme.colors.lightMode.text};
   font-weight: ${(props) => props.theme.fontWeights.bold};
