@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-export const StyledHome = styled.main`
+export const StyledPage = styled.main`
   background-color: ${(props) => props.theme.colors.bg};
-  min-height: 90vh;
+  min-height: 86vh;
   padding: 2rem 1rem;
+
+  & > * {
+    max-width: 120rem;
+    margin-inline: auto;
+  }
 `;

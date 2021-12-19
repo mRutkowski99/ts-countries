@@ -1,13 +1,13 @@
-import { StyledHome } from "./Home.styled";
+import { StyledPage } from "../Page.styled";
 import Form from "../../layout/Form/Form";
 import Countries from "../../layout/Countries/Countries";
 
 const Home: React.FC = () => {
   return (
-    <StyledHome>
+    <StyledPage>
       <Form />
       <Countries />
-    </StyledHome>
+    </StyledPage>
   );
 };
 

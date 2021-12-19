@@ -18,7 +18,7 @@ const Theme: React.FC = (props) => {
       bold: 600,
       xbold: 800,
     },
-    boxShadow: "0 5px 10px rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 5px 10px rgba(0, 0, 0, 0.2)",
   };
 
   return <ThemeProvider theme={theme}>{props.children}</ThemeProvider>;

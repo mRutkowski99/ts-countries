@@ -17,7 +17,6 @@ export const StyledCountry = styled.div`
 export const FlagContainer = styled.div<IProps>`
   width: 100%;
   height: 16rem;
-  background: red;
   background-image: url(${(props) => props.flagSrc});
   background-position: center;
   background-repeat: no-repeat;

@@ -4,8 +4,6 @@ import useRenderCountries from "./useRenderCountries";
 const Countries: React.FC = () => {
   const { countries, isLoading, error } = useRenderCountries();
 
-  console.log(error);
-
   return (
     <StyledCountries>
       {error && <p>{error}</p>}
