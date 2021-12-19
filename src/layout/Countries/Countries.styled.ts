@@ -7,4 +7,5 @@ export const StyledCountries = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
   gap: 4rem;
   justify-items: center;
+  color: ${(props) => props.theme.colors.text};
 `;

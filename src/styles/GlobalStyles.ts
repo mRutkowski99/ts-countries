@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
         font: inherit;
     }
     
+    p {
+        font-size: 3rem;
+        font-weight: 600;
+    }
 `;
 
 export default GlobalStyle;

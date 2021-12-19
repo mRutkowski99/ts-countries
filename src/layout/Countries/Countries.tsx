@@ -4,10 +4,13 @@ import useRenderCountries from "./useRenderCountries";
 const Countries: React.FC = () => {
   const { countries, isLoading, error } = useRenderCountries();
 
+  console.log(error);
+
   return (
     <StyledCountries>
-      {isLoading && <p>Loading...</p>}
-      {!isLoading && countries}
+      {error && <p>{error}</p>}
+      {isLoading && !error && <p>Loading...</p>}
+      {!isLoading && !error && countries}
     </StyledCountries>
   );
 };

@@ -15,12 +15,14 @@ const useFetch = () => {
 
     try {
       const response = await fetch(BASE_URL + (urlEndpoint || "all"));
-      console.log(BASE_URL + urlEndpoint);
-      if (!response.ok) throw new Error("Something went wrong");
+
+      if (!response.ok) throw new Error(response.status.toString());
+
       const data = await response.json();
       dataHandlerFn(data);
     } catch (error: any) {
-      setError(error);
+      if ((error = "Error 404")) setError("No country found.");
+      else setError("Something went wrong. Please try again later.");
     } finally {
       setIsLoading(false);
     }
