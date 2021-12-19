@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: ${(props) => props.theme.colors.lightMode.text};
+  color: ${(props) => props.theme.colors.text};
   font-weight: ${(props) => props.theme.fontWeights.bold};
   cursor: pointer;
 `;

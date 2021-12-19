@@ -1,15 +1,13 @@
-import { useState } from "react";
+import { useContext } from "react";
+import AppContext from "../../store/AppContext";
 
 const useChangeTheme = () => {
-  const [mode, setMode] = useState("lightMode");
+  const context = useContext(AppContext);
 
-  const changeModeHandler: () => void = () => {
-    if (mode === "lightMode") setMode("darkMode");
-    else setMode("lightMode");
-  };
+  const changeModeHandler = () => context.toggleMode();
 
   return {
-    btnText: mode === "lightMode" ? "Light Mode" : "Dark Mode",
+    btnText: context.lightMode ? "Light Mode" : "Dark Mode",
     changeModeHandler,
   };
 };

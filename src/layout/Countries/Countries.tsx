@@ -1,8 +1,15 @@
 import { StyledCountries } from "./Countries.styled";
-import Country from "../../components/Country/Country";
+import useRenderCountries from "./useRenderCountries";
 
 const Countries: React.FC = () => {
-  return <StyledCountries></StyledCountries>;
+  const { countries, isLoading, error } = useRenderCountries();
+
+  return (
+    <StyledCountries>
+      {isLoading && <p>Loading...</p>}
+      {!isLoading && countries}
+    </StyledCountries>
+  );
 };
 
 export default Countries;

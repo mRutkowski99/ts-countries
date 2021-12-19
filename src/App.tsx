@@ -1,17 +1,18 @@
-import GlobalStyle from "./GlobalStyles";
-import { ThemeProvider } from "styled-components";
-import theme from "./theme";
-
+import GlobalStyle from "./styles/GlobalStyles";
+import Theme from "./styles/Theme";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+import { AppContextProvider } from "./store/AppContext";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header />
-      <Home />
-    </ThemeProvider>
+    <AppContextProvider>
+      <Theme>
+        <GlobalStyle />
+        <Header />
+        <Home />
+      </Theme>
+    </AppContextProvider>
   );
 }
 
