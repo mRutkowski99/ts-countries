@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 
-const BASE_URL = "https://restcountries.com/v3.1/";
+const BASE_URL = "https://restcountries.com/";
 
 const useFetch = () => {
   const [isLoading, setIsLoading] = useState(false);

@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Detail from "./pages/Detail/Detail";
 import { AppContextProvider } from "./store/AppContext";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
       <Theme>
         <GlobalStyle />
         <Header />
-        <Detail />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:country" element={<Detail />} />
+        </Routes>
       </Theme>
     </AppContextProvider>
   );

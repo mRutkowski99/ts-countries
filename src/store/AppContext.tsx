@@ -19,17 +19,17 @@ const AppContext = React.createContext<IContext>({
 
 export const AppContextProvider: React.FC = ({ children }) => {
   const [lightMode, setLightMode] = useState(true);
-  const [endPoint, setEndPoint] = useState("all");
+  const [endPoint, setEndPoint] = useState("v3.1/all");
 
   const toggleModeHandler: () => void = () => setLightMode((prev) => !prev);
 
   const textInputHandler: (value: string) => void = (value) => {
-    if (value.length === 0) setEndPoint("all");
-    if (value.length >= 3) setEndPoint("name/" + value);
+    if (value.length === 0) setEndPoint("v3.1/all");
+    if (value.length >= 3) setEndPoint("v3.1/name/" + value);
   };
 
   const dropdownHandler: (value: string) => void = (value) =>
-    setEndPoint("region/" + value);
+    setEndPoint("v3.1/region/" + value);
 
   const context: IContext = {
     lightMode: lightMode,

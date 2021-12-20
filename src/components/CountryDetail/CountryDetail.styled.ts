@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledDetailInfo = styled.section`
+export const StyledCountryDetail = styled.section`
   max-width: 120rem;
   margin: 3rem auto 1rem;
   display: flex;

@@ -1,4 +1,5 @@
 import { StyledCountry, FlagContainer, Info } from "./Country.styled";
+import { useNavigate } from "react-router";
 
 interface ICountry {
   flagSrc: string;
@@ -9,8 +10,11 @@ interface ICountry {
 }
 
 const Country = ({ flagSrc, name, population, region, capital }: ICountry) => {
+  const navigate = useNavigate();
+  const routeToDetailHandler = () => navigate(`/${name.toLowerCase()}`);
+
   return (
-    <StyledCountry>
+    <StyledCountry onClick={routeToDetailHandler}>
       <FlagContainer flagSrc={flagSrc} />
       <Info>
         <h2>{name}</h2>
