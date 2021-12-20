@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const StyledNavButton = styled.a`
+export const StyledNavButton = styled(Link)`
   font: inherit;
   font-size: 1.6rem;
   color: ${(props) => props.theme.colors.text};

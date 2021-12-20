@@ -1,8 +1,7 @@
-import React from "react";
 import { StyledNavButton } from "./NavButton.styled";
 
-const NavButton: React.FC = (props) => {
-  return <StyledNavButton>{props.children}</StyledNavButton>;
+const NavButton: React.FC<{ to: string }> = ({ to, children }) => {
+  return <StyledNavButton to={to}>{children}</StyledNavButton>;
 };
 
 export default NavButton;

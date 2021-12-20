@@ -63,7 +63,7 @@ const CountryDetail = ({
           <BorderCountryList>
             {countryDetail.borderCountries.map((border, idx) => (
               <li key={idx}>
-                <NavButton>{border}</NavButton>
+                <NavButton to={`/${border.toLowerCase()}`}>{border}</NavButton>
               </li>
             ))}
           </BorderCountryList>

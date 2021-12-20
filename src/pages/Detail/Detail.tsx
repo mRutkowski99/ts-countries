@@ -7,7 +7,7 @@ const Detail = () => {
   return (
     <StyledPage>
       <div>
-        <NavButton>
+        <NavButton to="/">
           <IconArrow />
           <span>Back</span>
         </NavButton>
