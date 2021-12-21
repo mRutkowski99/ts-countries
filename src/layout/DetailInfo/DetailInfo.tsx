@@ -7,8 +7,6 @@ const DetailInfo = () => {
   const params = useParams();
   const { isLoading, error, countryDetail } = useFetchDetails(params.country);
 
-  console.log(isLoading, countryDetail);
-
   return (
     <>
       {error && (
@@ -16,14 +14,7 @@ const DetailInfo = () => {
           <p>{error}</p>
         </Center>
       )}
-      {(isLoading || countryDetail === null) && !error && (
-        <Center>
-          <p>Loading...</p>
-        </Center>
-      )}
-      {!isLoading && countryDetail !== null && !error && (
-        <CountryDetail countryDetail={countryDetail} />
-      )}
+      {!error && <CountryDetail countryDetail={countryDetail} />}
     </>
   );
 };

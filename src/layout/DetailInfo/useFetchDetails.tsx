@@ -4,8 +4,8 @@ import { ICountryDetail } from "../../constants/interfaces";
 
 const useFetchDetails = (selectedCountry: string | undefined) => {
   const { isLoading, error, fetchData } = useFetch();
-  const [countryDetail, setCountryDetail] = useState<ICountryDetail | null>(
-    null
+  const [countryDetail, setCountryDetail] = useState<ICountryDetail>(
+    {} as ICountryDetail
   );
 
   const dataHandler = (data: any) => {

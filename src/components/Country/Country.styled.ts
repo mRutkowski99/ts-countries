@@ -11,6 +11,8 @@ export const StyledCountry = styled(motion.div)`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: ${(props) => props.theme.colors.elements};
+  color: ${(props) => props.theme.colors.text};
   box-shadow: ${(props) => props.theme.boxShadow};
   cursor: pointer;
 `;
@@ -26,8 +28,6 @@ export const FlagContainer = styled.div<IProps>`
 
 export const Info = styled.div`
   padding: 2rem 2rem 3rem;
-  background-color: ${(props) => props.theme.colors.elements};
-  color: ${(props) => props.theme.colors.text};
 
   & > div {
     display: flex;
