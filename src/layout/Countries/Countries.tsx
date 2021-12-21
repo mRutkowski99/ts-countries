@@ -1,6 +1,7 @@
 import Center from "../../utilities/Center";
 import { StyledCountries } from "./Countries.styled";
 import useRenderCountries from "./useRenderCountries";
+import Loading from "../../components/Loading/Loading";
 
 const Countries: React.FC = () => {
   const { countries, isLoading, error } = useRenderCountries();
@@ -14,7 +15,7 @@ const Countries: React.FC = () => {
       )}
       {(isLoading || countries === null) && !error && (
         <Center>
-          <p>Loading...</p>
+          <Loading />
         </Center>
       )}
       {!isLoading && countries !== null && !error && (

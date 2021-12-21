@@ -21,7 +21,15 @@ export const AppContextProvider: React.FC = ({ children }) => {
   const [lightMode, setLightMode] = useState(true);
   const [endPoint, setEndPoint] = useState("v3.1/all");
 
-  const toggleModeHandler: () => void = () => setLightMode((prev) => !prev);
+  const toggleModeHandler: () => void = () => {
+    setLightMode((prev) => !prev);
+    localStorage.setItem("mode", String(!lightMode));
+  };
+
+  useEffect(() => {
+    const mode = localStorage.getItem("mode");
+    setLightMode(mode === "true");
+  });
 
   const textInputHandler: (value: string) => void = (value) => {
     if (value.length === 0) setEndPoint("v3.1/all");
