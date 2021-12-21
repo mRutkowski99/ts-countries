@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface IProps {
   flagSrc?: string;
 }
 
-export const StyledCountry = styled.div`
+export const StyledCountry = styled(motion.div)`
   width: 27rem;
   border-radius: 0.5rem;
   overflow: hidden;

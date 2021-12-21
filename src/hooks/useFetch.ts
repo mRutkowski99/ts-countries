@@ -14,7 +14,7 @@ const useFetch = () => {
     setError("");
 
     try {
-      const response = await fetch(BASE_URL + (urlEndpoint || "all"));
+      const response = await fetch(BASE_URL + (urlEndpoint || "v3/all"));
 
       if (!response.ok) throw new Error(response.status.toString());
 

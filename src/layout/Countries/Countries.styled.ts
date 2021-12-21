@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const StyledCountries = styled.section`
   max-width: 120rem;

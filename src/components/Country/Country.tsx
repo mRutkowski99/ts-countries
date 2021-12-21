@@ -1,7 +1,11 @@
 import { StyledCountry, FlagContainer, Info } from "./Country.styled";
 import { useNavigate } from "react-router";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 interface ICountry {
+  id: number;
   flagSrc: string;
   name: string;
   population: string;
@@ -9,12 +13,43 @@ interface ICountry {
   capital: string;
 }
 
-const Country = ({ flagSrc, name, population, region, capital }: ICountry) => {
+const initial = {
+  y: -40,
+  opacity: 0,
+};
+
+const Country = ({
+  flagSrc,
+  name,
+  population,
+  region,
+  capital,
+  id,
+}: ICountry) => {
   const navigate = useNavigate();
   const routeToDetailHandler = () => navigate(`/${name.toLowerCase()}`);
+  const { ref, inView } = useInView({ threshold: 0.4 });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        y: 0,
+        opacity: 1,
+        transition: {
+          delay: (id % 4) * 0.1,
+        },
+      });
+    }
+  });
 
   return (
-    <StyledCountry onClick={routeToDetailHandler}>
+    <StyledCountry
+      onClick={routeToDetailHandler}
+      ref={ref}
+      initial={initial}
+      animate={animation}
+    >
       <FlagContainer flagSrc={flagSrc} />
       <Info>
         <h2>{name}</h2>

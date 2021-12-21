@@ -25,11 +25,12 @@ const useFetchDetails = (selectedCountry: string | undefined) => {
       domain: country.topLevelDomain[0],
       currencies: country.currencies.map((cur: any) => cur.name).join(", "),
       languages: country.languages.map((lng: any) => lng.name).join(", "),
-      borderCountries: data
-        .filter((element: { alpha3Code: string }) =>
-          country.borders.includes(element.alpha3Code)
-        )
-        .map((element: { name: any }) => element.name),
+      borderCountries:
+        data
+          .filter((element: { alpha3Code: string }) =>
+            country.borders.includes(element.alpha3Code)
+          )
+          .map((element: { name: any }) => element.name) || [],
     });
   };
 

@@ -1,3 +1,4 @@
+import Center from "../../utilities/Center";
 import { StyledCountries } from "./Countries.styled";
 import useRenderCountries from "./useRenderCountries";
 
@@ -5,11 +6,21 @@ const Countries: React.FC = () => {
   const { countries, isLoading, error } = useRenderCountries();
 
   return (
-    <StyledCountries>
-      {error && <p>{error}</p>}
-      {isLoading && !error && <p>Loading...</p>}
-      {!isLoading && !error && countries}
-    </StyledCountries>
+    <>
+      {error && (
+        <Center>
+          <p>{error}</p>
+        </Center>
+      )}
+      {(isLoading || countries === null) && !error && (
+        <Center>
+          <p>Loading...</p>
+        </Center>
+      )}
+      {!isLoading && countries !== null && !error && (
+        <StyledCountries>{countries}</StyledCountries>
+      )}
+    </>
   );
 };
 

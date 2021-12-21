@@ -1,4 +1,5 @@
 import CountryDetail from "../../components/CountryDetail/CountryDetail";
+import Center from "../../utilities/Center";
 import useFetchDetails from "./useFetchDetails";
 import { useParams } from "react-router-dom";
 
@@ -10,8 +11,17 @@ const DetailInfo = () => {
 
   return (
     <>
-      {(isLoading || countryDetail === null) && <p>Loading...</p>}
-      {!isLoading && countryDetail !== null && (
+      {error && (
+        <Center>
+          <p>{error}</p>
+        </Center>
+      )}
+      {(isLoading || countryDetail === null) && !error && (
+        <Center>
+          <p>Loading...</p>
+        </Center>
+      )}
+      {!isLoading && countryDetail !== null && !error && (
         <CountryDetail countryDetail={countryDetail} />
       )}
     </>
