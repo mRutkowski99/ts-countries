@@ -28,6 +28,7 @@ Users should be able to:
 - [Styled Components](https://styled-components.com/) - For styles
 - [React Router](https://reactrouter.com/)
 - [Framer Motion](https://www.framer.com/motion/)
+- [React Intersection Observer](https://www.npmjs.com/package/react-intersection-observer)
 - [React Skeleton](https://www.npmjs.com/package/react-loading-skeleton)
 - [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar)
 - Flexbox
